@@ -1,23 +1,23 @@
 {
   "name": "grunt-chown",
   "description": "A gGrunt plugin that allows you to change the owner of a file.",
-  "version": "0.1.1",
-  "homepage": "https://github.com/eamonsisk/grunt-chown",
+  "version": "0.1.2",
+  "homepage": "https://github.com/etsisk/grunt-chown",
   "author": {
     "name": "Eamon Sisk",
     "email": "eamonsisk@gmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/eamonsisk/grunt-chown.git"
+    "url": "git://github.com/etsisk/grunt-chown.git"
   },
   "bugs": {
-    "url": "https://github.com/eamonsisk/grunt-chown/issues"
+    "url": "https://github.com/etsisk/grunt-chown/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/eamonsisk/grunt-chown/blob/master/LICENSE-MIT"
+      "url": "https://github.com/etsisk/grunt-chown/blob/master/LICENSE-MIT"
     }
   ],
   "main": "Gruntfile.js",
