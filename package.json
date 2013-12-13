@@ -1,7 +1,7 @@
 {
   "name": "grunt-chown",
   "description": "A gGrunt plugin that allows you to change the owner of a file.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/eamonsisk/grunt-chown",
   "author": {
     "name": "Eamon Sisk",

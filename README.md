@@ -26,7 +26,8 @@ In your project's Gruntfile, add a section named `chown` to the data object pass
 grunt.initConfig({
   chown: {
     options: {
-      owner: 'root'
+      uid: 0,
+      gid: 0
     },
     target: {
       src: ['path/to/file']
@@ -37,14 +38,20 @@ grunt.initConfig({
 
 ### Options
 
-#### options.owner
-Type: `String`
-Default value: `''`
+#### options.uid
+Type: `Number`
+Default value: 32767
 
-A string value that is used to set name of the owner.
+A number value that is used to set the user id.
+
+#### options.gid
+Type: `Number`
+Default value: 32767
+
+A number value that is used to set the group id.
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
-_(Nothing yet)_
+- 2012-05-01   v0.1.1   initial release

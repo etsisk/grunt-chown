@@ -15,16 +15,17 @@ module.exports = function(grunt) {
 
   grunt.registerMultiTask('chown', 'A Grunt plugin that allows you to change the owner of a file.', function() {
     // Merge task-specific and/or target-specific options with these defaults.
-    var options = this.options({ owner: '' }),
-		owner = options.owner,
+    var options = this.options({ uid: 32767, gid: 32767 }),
+		uid = options.uid,
+		gid = options.gid,
 		fs;
-		
-	if ( !owner ) {
-		grunt.fail.warn( 'No `owner` was specified in the task `options`.' );
+	
+	if ( typeof uid !== 'number' ) {
+		grunt.fail.warn( 'Value of `uid` must be an unsigned integer.' );
 	}
 	
-	if ( typeof owner !== 'string' ) {
-		grunt.fail.warn( 'Value of `owner` must be a string.' );
+	if ( typeof gid !== 'number' ) {
+		grunt.fail.warn( 'Value of `gid` must be an unsigned integer.' );
 	}
 
 	fs = require( 'fs' );
@@ -38,7 +39,7 @@ module.exports = function(grunt) {
           return false;
         } else {
             try {
-                fs.chownSync( filepath, owner );
+                fs.chownSync( filepath, uid, gid );
             } catch (e) {
                 grunt.fail.warn( e + ' on file "' + filepath + '".' );
             }
@@ -46,7 +47,8 @@ module.exports = function(grunt) {
       });
 
       // Print a success message.
-      grunt.log.ok( 'File "' + f.src + '" owner set to "' + owner + '".' );
+      grunt.log.ok( 'File "' + f.src + '" uid set to "' + uid + '".' );
+      grunt.log.ok( 'File "' + f.src + '" gid set to "' + gid + '".' );
     });
   });
 
