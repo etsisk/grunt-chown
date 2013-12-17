@@ -50,8 +50,62 @@ Default value: 32767
 
 A number value that is used to set the group id.
 
+### Usage Examples
+
+#### Basic options
+
+Set `uid` and `gid` values for all of your targets.
+
+```js
+grunt.initConfig({
+  chown: {
+    options: {
+      uid: 0,
+      gid: 0
+    },
+    targetA: {
+      src: ['path/to/a']
+    },
+    targetB: {
+      src: ['path/to/b']
+    }
+  },
+});
+```
+
+#### Custom options
+
+Set `uid` and `gid` values per target.
+
+```js
+grunt.initConfig({
+  chown: {
+    options: {
+      uid: 0,
+      gid: 0
+    },
+    targetA: {
+      options: {
+        uid: 501,
+        gid: 20
+      },
+      src: ['path/to/a']
+    },
+    targetB: {
+      options: {
+        uid: 504,
+        gid: 80
+      },
+      src: ['path/to/b']
+    }
+  },
+});
+```
+
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
+- 2013-12-16   v0.1.3   revised output log/updated README.md with usage examples
+- 2013-12-13   v0.1.2   fixed github URLs
 - 2013-12-13   v0.1.1   initial release
